@@ -2,7 +2,7 @@ import os
 import comtypes.client
 
 # Set the path of the folder containing the .docx files
-folder_path = r"C:\Users\user\OneDrive\Bureau\2023"
+folder_path = r"C:\Users\user\path\docx_folder\"
 
 # Create a list of all .docx files in the folder
 docx_files = [f for f in os.listdir(folder_path) if f.endswith(".docx")]
@@ -34,11 +34,11 @@ for docx_file in docx_files:
         word.Quit()
 
         # Let the user know that the file has been successfully converted
-        print("[☠ビトレス ☠]: The file " + docx_file + " has been converted to .pdf and saved in the PDF_Files folder.")
+        print("[DocxToPdfConverter]: The file " + docx_file + " has been converted to .pdf and saved in the PDF_Files folder.")
 
     except Exception as e:
         # If there is an error, print a message indicating that the file could not be converted
-        print("[☠ビトレス ☠]: The file " + docx_file + " could not be converted to .pdf. Error message: " + str(e))
+        print("[DocxToPdfConverter]: The file " + docx_file + " could not be converted to .pdf. Error message: " + str(e))
 
 # Let the user know the conversion is complete
-print("[☠ビトレス ☠]: Conversion complete.")
+print("[DocxToPdfConverter]: Conversion complete.")
